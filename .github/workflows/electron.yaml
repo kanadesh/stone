@@ -15,13 +15,11 @@ jobs:
               env:
                   GITHUB_CONTEXT: ${{ toJson(github) }}
               run: echo "$GITHUB_CONTEXT"
-            - uses: actions/checkout@v1
+            - uses: actions/checkout@v4
               with:
                   fetch-depth: 1
             - name: Use Node.js 10.x
-              uses: actions/setup-node@v1
-              with:
-                  node-version: 10.x
+              uses: actions/setup-node@v4
 
             - uses: pnpm/action-setup@v2.2.2
               with:
